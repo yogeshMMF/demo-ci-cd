@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "22"
       - name: Show info
@@ -24,7 +24,7 @@ jobs:
           echo "APP : ${{ env.APP_NAME }}"
           echo "Repo : ${{ github.ref_name }}"
           echo "Job : ${{ github.job }}"
-          echo "Runner : ${{ runner.os }} ${{ runner.architecture }}"
+          echo "Runner : ${{ runner.os }} ${{ runner.arch }}"
 
       - name: Run tests
         run: npm test
